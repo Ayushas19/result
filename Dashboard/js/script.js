@@ -2,9 +2,9 @@
 // FILE PATHS
 // ======================================
 
-const SCORE_FILE = "data/score_cleaned.xlsx";
-const ELIMINATED_FILE = "data/eliminated_cleaned.xlsx";
-const PARTICIPATION_FILE = "data/30_Days.xlsx";
+const SCORE_FILE = "Dashboard/data/score_cleaned.xlsx";
+const ELIMINATED_FILE = "Dashboard/data/eliminated_cleaned.xlsx";
+const PARTICIPATION_FILE = "Dashboard/data/30_Days.xlsx";
 
 let scoreData = [];
 let eliminatedData = [];
