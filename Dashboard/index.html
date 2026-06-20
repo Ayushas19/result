@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100DaysLeetCode Challenge - Arena Dashboard</title>
+    
+    <!-- Google Fonts: Barlow (Body) & Teko (Headings/Gaming feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- =====================================
+                NAVBAR
+===================================== -->
+<header class="navbar-outer">
+    <div class="navbar-container">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-terminal logo-icon"></i>
+                <span class="logo-text">100DaysLeetCode Challenge</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li class="active"><a href="#hero">Home</a></li>
+                <li><a href="#champions">Champions</a></li>
+                <li><a href="#leaderboard">Leaderboard</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#strikes">Strikes</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="https://github.com" target="_blank" class="nav-btn github-btn">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+                <a href="#leaderboard" class="nav-btn join-btn">LEADERBOARD</a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- =====================================
+                HERO SECTION (BANNER)
+===================================== -->
+<section id="hero" class="banner-section-outer">
+    <div class="banner-overlay"></div>
+    <div class="container hero-grid">
+        
+        <!-- Left: Coding Banner Details -->
+        <div class="banner-content" data-aos="fade-up">
+            <span class="badge">
+                <i class="fa-solid fa-code-branch"></i> 100 DAYS LEETCODE CHALLENGE
+            </span>
+            <h1>100 DAYS LEETCODE CHALLENGE</h1>
+            <p>
+                Track live rankings, strike analysis, completion certificates, and participant analytics for the elite developers who entered the 100 Days LeetCode Challenge.
+            </p>
+            <div class="btn_wrapper">
+                <a class="text-decoration-none readmore_btn" href="#leaderboard">EXPLORE LEADERBOARD</a>
+                <a class="text-decoration-none joinus_btn" href="#champions">VIEW CHAMPIONS</a>
+            </div>
+        </div>
+        
+        <!-- Right: 1st Winner Hall of Fame Frame -->
+        <div class="hall-of-frame-wrapper" data-aos="fade-left">
+            <div class="hof-card">
+                <div class="hof-badge-glow"></div>
+                <div class="hof-header">
+                    <i class="fa-solid fa-crown hof-crown"></i>
+                    <span>HALL OF FAME</span>
+                </div>
+                <div class="hof-rank">#1 CHAMPION</div>
+                <div class="hof-avatar-container">
+                    <div class="avatar-glow-ring"></div>
+                    <img id="hof-avatar" src="https://github.com/github.png" alt="Champion Avatar">
+                </div>
+                <h2 id="hof-username">Winner Name</h2>
+                <div class="hof-score-badge">
+                    <span class="label">SCORE:</span>
+                    <span id="hof-score" class="value">0</span>
+                </div>
+                <div class="hof-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text">LEADER OF THE ARENA</span>
+                </div>
+                <a id="hof-profile-link" href="#" target="_blank" class="hof-btn">
+                    <i class="fa-brands fa-github"></i> VIEW PROFILE
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<!-- =====================================
+            TOP CHAMPIONS (PODIUM)
+===================================== -->
+<section id="champions" class="champions">
+    <div class="section-title">
+        <h2><img src="assets/images/trophy_icon.png" class="section-title-icon" alt=""> CHAMPIONS PODIUM</h2>
+        <div class="title-underline"></div>
+        <p>Top Performers Of The Coding Challenge</p>
+    </div>
+
+    <div class="podium">
+        
+        <!-- 2nd Place (Silver) -->
+        <div class="podium-card silver">
+            <div class="position">#2</div>
+            <div class="podium-avatar-wrapper">
+                <img id="runner1-avatar" src="https://github.com/github.png" alt="Silver Avatar">
+            </div>
+            <h3 id="runner1-name">Runner Up</h3>
+            <span id="runner1-score">Score : 0</span>
+        </div>
+
+        <!-- 1st Place (Gold) -->
+        <div class="podium-card gold">
+            <div class="position">#1</div>
+            <div class="podium-avatar-wrapper">
+                <img id="winner-avatar" src="https://github.com/github.png" alt="Gold Avatar">
+            </div>
+            <h3 id="winner-name">Winner</h3>
+            <span id="winner-score">Score : 0</span>
+        </div>
+
+        <!-- 3rd Place (Bronze) -->
+        <div class="podium-card bronze">
+            <div class="position">#3</div>
+            <div class="podium-avatar-wrapper">
+                <img id="runner2-avatar" src="https://github.com/github.png" alt="Bronze Avatar">
+            </div>
+            <h3 id="runner2-name">Runner Up</h3>
+            <span id="runner2-score">Score : 0</span>
+        </div>
+
+    </div>
+</section>
+
+<!-- =====================================
+                METRICS
+===================================== -->
+<section class="metrics-section-outer">
+    <div class="container">
+        <div class="metrics">
+            
+            <div class="metric-card">
+                <div class="card-glow"></div>
+                <i class="fa-solid fa-users metric-icon"></i>
+                <h3>TOTAL PARTICIPANTS</h3>
+                <h1 id="metricParticipants">0</h1>
+                <div class="metric-stat-footer">Across All Stages</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="card-glow"></div>
+                <i class="fa-solid fa-circle-check metric-icon text-success"></i>
+                <h3>COMPLETED 100 DAYS</h3>
+                <h1 id="completedParticipants">0</h1>
+                <div class="metric-stat-footer" id="totalParticipantsText">Of total registered</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="card-glow"></div>
+                <i class="fa-solid fa-award metric-icon text-warning"></i>
+                <h3>30+ DAYS CERTIFICATES</h3>
+                <h1 id="participationCount">0</h1>
+                <div class="metric-stat-footer">Qualifying Holders</div>
+            </div>
+
+            <div class="metric-card">
+                <div class="card-glow"></div>
+                <i class="fa-solid fa-shield-halved metric-icon text-danger"></i>
+                <h3>ZERO STRIKE USERS</h3>
+                <h1 id="zeroStrikeCount">0</h1>
+                <div class="metric-stat-footer">Perfect Attendance</div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- =====================================
+            LEADERBOARD
+===================================== -->
+<section id="leaderboard" class="leaderboard">
+    <div class="section-title">
+        <h2><img src="assets/images/rank_icon.png" class="section-title-icon" alt=""> ARENA LEADERBOARD</h2>
+        <div class="title-underline"></div>
+        <p>Top Participants Ranked By Score</p>
+    </div>
+
+    <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search GitHub Username...">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>RANK</th>
+                    <th>AVATAR</th>
+                    <th>GITHUB USERNAME</th>
+                    <th>SCORE</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+                <!-- Dynamically Populated -->
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- =====================================
+        CERTIFICATE SECTION
+===================================== -->
+<section id="certificates" class="certificate-section">
+    <div class="section-title">
+        <h2><img src="assets/images/medal_icon.png" class="section-title-icon" alt=""> HONORARY CERTIFICATES</h2>
+        <div class="title-underline"></div>
+        <p>Completion & Participation Holders</p>
+    </div>
+
+    <div class="certificate-grid">
+
+        <!-- Completion -->
+        <div class="certificate-card completion-card-wrapper">
+            <div class="certificate-header">
+                <h2><img src="assets/images/trophy_icon.png" class="card-title-icon" alt=""> COMPLETION CERTIFICATE (100 DAYS)</h2>
+                <span class="count-badge" id="completionCountBadge">0</span>
+            </div>
+            <div id="completionUsers" class="users-chips-container">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+
+        <!-- Participation -->
+        <div class="certificate-card participation-card-wrapper">
+            <div class="certificate-header">
+                <h2><img src="assets/images/medal_icon.png" class="card-title-icon" alt=""> PARTICIPATION CERTIFICATE (30+ DAYS)</h2>
+                <span class="count-badge" id="participationCountBadge">0</span>
+            </div>
+            <div id="participationUsers" class="users-chips-container">
+                <!-- Dynamically Populated -->
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- =====================================
+            STRIKE ANALYSIS
+===================================== -->
+<section id="strikes" class="strike-section">
+    <div class="section-title">
+        <h2><img src="assets/images/strike_icon.png" class="section-title-icon" alt=""> STRIKE ANALYSIS</h2>
+        <div class="title-underline"></div>
+        <p>Categorized Participants By Strike Count</p>
+    </div>
+
+    <div class="accordion-container-box">
+        
+        <!-- 0 Strike -->
+        <details class="accordion zero-strike-details">
+            <summary>
+                <span><i class="fa-solid fa-circle-check text-success"></i> 0 Strike Participants</span>
+                <span id="zeroStrikeAccordionCount" class="badge-count">0</span>
+            </summary>
+            <div class="accordion-content">
+                <div id="zeroStrikeUsers" class="users-chips-container">
+                    <!-- Dynamically Populated -->
+                </div>
+            </div>
+        </details>
+
+        <!-- 1 Strike -->
+        <details class="accordion one-strike-details">
+            <summary>
+                <span><i class="fa-solid fa-circle-exclamation text-warning"></i> 1 Strike Participants</span>
+                <span id="oneStrikeAccordionCount" class="badge-count">0</span>
+            </summary>
+            <div class="accordion-content">
+                <div id="oneStrikeUsers" class="users-chips-container">
+                    <!-- Dynamically Populated -->
+                </div>
+            </div>
+        </details>
+
+        <!-- 2 Strike -->
+        <details class="accordion two-strike-details">
+            <summary>
+                <span><i class="fa-solid fa-triangle-exclamation text-danger"></i> 2 Strike Participants</span>
+                <span id="twoStrikeAccordionCount" class="badge-count">0</span>
+            </summary>
+            <div class="accordion-content">
+                <div id="twoStrikeUsers" class="users-chips-container">
+                    <!-- Dynamically Populated -->
+                </div>
+            </div>
+        </details>
+        
+    </div>
+</section>
+
+<!-- =====================================
+                FOOTER
+===================================== -->
+<footer class="footer-section">
+    <div class="footer-middle">
+        <div class="footer-links">
+            <a href="#hero">Home</a>
+            <a href="#champions">Champions</a>
+            <a href="#leaderboard">Leaderboard</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#strikes">Strikes</a>
+        </div>
+        <div class="footer-logo">
+            <i class="fa-solid fa-terminal logo-icon"></i>
+            <span>100DaysLeetCode Challenge</span>
+        </div>
+        <div class="footer-socials">
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-discord"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright &copy; 2026 100DaysLeetCode Challenge. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<!-- XLSX Library and Main Javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
